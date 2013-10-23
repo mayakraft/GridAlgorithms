@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
 
-@interface View : UIView
+@interface Scene:SKScene
 @property (nonatomic) NSInteger segments;
 @property (nonatomic) CGFloat cellSize;
 @end

@@ -7,11 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "View.h"
+#import "Scene.h"
 
-@interface ViewController (){
-    View *view;
-}
+@interface ViewController ()
 @end
 
 @implementation ViewController
@@ -19,9 +17,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	view = [[View alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [view setSegments:10];
-    [self setView:view];
+    
+    SKView * skView = [[SKView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self setView:skView];
+    
+    Scene * scene = [Scene sceneWithSize:skView.bounds.size];
+    [scene setSegments:15];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    [skView presentScene:scene];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,37 +10,14 @@
 
 @implementation Square
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        [self.layer setBorderColor:[UIColor blackColor].CGColor];
-        [self.layer setBorderWidth:0.0];
-    }
-    return self;
-}
-
-
--(void) setHighlight:(BOOL)highlight{
-    _highlight = highlight;
-    if (_highlight){
-        [self.layer setBorderWidth:1.0];
-//        [self setBackgroundColor:[UIColor whiteColor]];
+-(void) setHighlighted:(BOOL)highlighted{
+    _highlighted = highlighted;
+    if (_highlighted){
+        [self setScale:0.95];
     }
     else{
-        [self.layer setBorderWidth:0.0];
-//        [self setBackgroundColor:[UIColor blackColor]];
+        [self setScale:1.0];
     }
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

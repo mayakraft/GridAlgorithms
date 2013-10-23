@@ -11,6 +11,8 @@
 @interface DDA : NSObject
 @property (nonatomic) NSInteger segments;
 @property (nonatomic) CGFloat cellSize;
+@property (nonatomic) CGFloat cellSizeX;
+@property (nonatomic) CGFloat cellSizeY;
 
 -(NSDictionary*)IndexesAndIntersectionsFromPoint:(CGPoint)start To:(CGPoint)end;
 

@@ -22,9 +22,10 @@
 		D5774D9318167B8A007D4659 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5774D7218167B8A007D4659 /* UIKit.framework */; };
 		D5774D9B18167B8B007D4659 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5774D9918167B8B007D4659 /* InfoPlist.strings */; };
 		D5774D9D18167B8B007D4659 /* SquaresTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5774D9C18167B8B007D4659 /* SquaresTests.m */; };
-		D5774DA818167BB6007D4659 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = D5774DA718167BB6007D4659 /* View.m */; };
+		D5774DA818167BB6007D4659 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D5774DA718167BB6007D4659 /* Scene.m */; };
 		D5774DAB18167E3F007D4659 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = D5774DAA18167E3F007D4659 /* Square.m */; };
 		D5C3D58B1817B119000B1E95 /* DDA.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C3D58A1817B119000B1E95 /* DDA.m */; };
+		D5C3D58D18184EA5000B1E95 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3D58C18184EA5000B1E95 /* SpriteKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +59,13 @@
 		D5774D9818167B8B007D4659 /* SquaresTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SquaresTests-Info.plist"; sourceTree = "<group>"; };
 		D5774D9A18167B8B007D4659 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5774D9C18167B8B007D4659 /* SquaresTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquaresTests.m; sourceTree = "<group>"; };
-		D5774DA618167BB6007D4659 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
-		D5774DA718167BB6007D4659 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+		D5774DA618167BB6007D4659 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		D5774DA718167BB6007D4659 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
 		D5774DA918167E3F007D4659 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
 		D5774DAA18167E3F007D4659 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Square.m; sourceTree = "<group>"; };
 		D5C3D5891817B119000B1E95 /* DDA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDA.h; sourceTree = "<group>"; };
 		D5C3D58A1817B119000B1E95 /* DDA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDA.m; sourceTree = "<group>"; };
+		D5C3D58C18184EA5000B1E95 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5C3D58D18184EA5000B1E95 /* SpriteKit.framework in Frameworks */,
 				D5774D7118167B8A007D4659 /* CoreGraphics.framework in Frameworks */,
 				D5774D7318167B8A007D4659 /* UIKit.framework in Frameworks */,
 				D5774D6F18167B8A007D4659 /* Foundation.framework in Frameworks */,
@@ -112,6 +115,7 @@
 		D5774D6D18167B8A007D4659 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5C3D58C18184EA5000B1E95 /* SpriteKit.framework */,
 				D5774D6E18167B8A007D4659 /* Foundation.framework */,
 				D5774D7018167B8A007D4659 /* CoreGraphics.framework */,
 				D5774D7218167B8A007D4659 /* UIKit.framework */,
@@ -129,8 +133,8 @@
 				D5774D8318167B8A007D4659 /* Main_iPad.storyboard */,
 				D5774D8618167B8A007D4659 /* ViewController.h */,
 				D5774D8718167B8A007D4659 /* ViewController.m */,
-				D5774DA618167BB6007D4659 /* View.h */,
-				D5774DA718167BB6007D4659 /* View.m */,
+				D5774DA618167BB6007D4659 /* Scene.h */,
+				D5774DA718167BB6007D4659 /* Scene.m */,
 				D5C3D5891817B119000B1E95 /* DDA.h */,
 				D5C3D58A1817B119000B1E95 /* DDA.m */,
 				D5774DA918167E3F007D4659 /* Square.h */,
@@ -268,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5774DA818167BB6007D4659 /* View.m in Sources */,
+				D5774DA818167BB6007D4659 /* Scene.m in Sources */,
 				D5774D8818167B8A007D4659 /* ViewController.m in Sources */,
 				D5774D7F18167B8A007D4659 /* AppDelegate.m in Sources */,
 				D5C3D58B1817B119000B1E95 /* DDA.m in Sources */,

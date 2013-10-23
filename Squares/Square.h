@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
 
-@interface Square : UIView
+@interface Square : SKSpriteNode
 
-@property (nonatomic) BOOL highlight;
+@property (nonatomic) BOOL highlighted;
 
 @end
