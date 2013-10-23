@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "View.h"
 
-@interface ViewController ()
-
+@interface ViewController (){
+    View *view;
+}
 @end
 
 @implementation ViewController
@@ -17,7 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	view = [[View alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [view setSegments:10];
+    [self setView:view];
 }
 
 - (void)didReceiveMemoryWarning
