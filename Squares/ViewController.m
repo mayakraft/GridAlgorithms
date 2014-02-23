@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "Scene.h"
+#import "CellScene.h"
 
 @interface ViewController ()
 @end
@@ -21,8 +21,9 @@
     SKView * skView = [[SKView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self setView:skView];
     
-    Scene * scene = [Scene sceneWithSize:skView.bounds.size];
-    [scene setSegments:15];
+    CellScene * scene = [[CellScene alloc] initWithSize:skView.bounds.size Columns:15];  //24
+//    [CellScene sceneWithSize:skView.bounds.size];
+//    [scene setSegments:15]; // 24
     scene.scaleMode = SKSceneScaleModeAspectFill;
     [skView presentScene:scene];
 }

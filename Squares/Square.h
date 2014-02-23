@@ -12,5 +12,6 @@
 @interface Square : SKSpriteNode
 
 @property (nonatomic) BOOL highlighted;
+@property (nonatomic) BOOL disabled;
 
 @end

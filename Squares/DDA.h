@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+// Digital Differential Analyzer
+
 @interface DDA : NSObject
 @property (nonatomic) NSInteger segments;
 @property (nonatomic) CGFloat cellSize;

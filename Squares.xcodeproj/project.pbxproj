@@ -26,6 +26,8 @@
 		D5774DAB18167E3F007D4659 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = D5774DAA18167E3F007D4659 /* Square.m */; };
 		D5C3D58B1817B119000B1E95 /* DDA.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C3D58A1817B119000B1E95 /* DDA.m */; };
 		D5C3D58D18184EA5000B1E95 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C3D58C18184EA5000B1E95 /* SpriteKit.framework */; };
+		D5FA5F7118B82C7700DC35F4 /* CellScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = D5FA5F7018B82C7700DC35F4 /* CellScene.mm */; };
+		D5FA5F7418B82D3D00DC35F4 /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5FA5F7218B82D3D00DC35F4 /* AStar.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,10 @@
 		D5C3D5891817B119000B1E95 /* DDA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDA.h; sourceTree = "<group>"; };
 		D5C3D58A1817B119000B1E95 /* DDA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDA.m; sourceTree = "<group>"; };
 		D5C3D58C18184EA5000B1E95 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		D5FA5F6F18B82C7700DC35F4 /* CellScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellScene.h; sourceTree = "<group>"; };
+		D5FA5F7018B82C7700DC35F4 /* CellScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CellScene.mm; sourceTree = "<group>"; };
+		D5FA5F7218B82D3D00DC35F4 /* AStar.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AStar.cpp; sourceTree = "<group>"; };
+		D5FA5F7318B82D3D00DC35F4 /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,10 @@
 				D5774D8318167B8A007D4659 /* Main_iPad.storyboard */,
 				D5774D8618167B8A007D4659 /* ViewController.h */,
 				D5774D8718167B8A007D4659 /* ViewController.m */,
+				D5FA5F6F18B82C7700DC35F4 /* CellScene.h */,
+				D5FA5F7018B82C7700DC35F4 /* CellScene.mm */,
+				D5FA5F7318B82D3D00DC35F4 /* AStar.h */,
+				D5FA5F7218B82D3D00DC35F4 /* AStar.cpp */,
 				D5774DA618167BB6007D4659 /* Scene.h */,
 				D5774DA718167BB6007D4659 /* Scene.m */,
 				D5C3D5891817B119000B1E95 /* DDA.h */,
@@ -277,7 +287,9 @@
 				D5774D7F18167B8A007D4659 /* AppDelegate.m in Sources */,
 				D5C3D58B1817B119000B1E95 /* DDA.m in Sources */,
 				D5774DAB18167E3F007D4659 /* Square.m in Sources */,
+				D5FA5F7418B82D3D00DC35F4 /* AStar.cpp in Sources */,
 				D5774D7B18167B8A007D4659 /* main.m in Sources */,
+				D5FA5F7118B82C7700DC35F4 /* CellScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Squares/Squares-Prefix.pch";
 				INFOPLIST_FILE = "Squares/Squares-Info.plist";
@@ -427,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Squares/Squares-Prefix.pch";
 				INFOPLIST_FILE = "Squares/Squares-Info.plist";

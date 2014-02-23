@@ -10,6 +10,19 @@
 
 @implementation Square
 
+-(id) initWithTexture:(SKTexture *)texture color:(UIColor *)color size:(CGSize)size{
+    self = [super initWithTexture:texture color:color size:size];
+    if(self){
+        if(arc4random()%4 == 0)
+            _disabled = true;
+        else
+            _disabled = false;
+        if(_disabled)
+            self.color = [UIColor blackColor];
+    }
+    return self;
+}
+
 -(void) setHighlighted:(BOOL)highlighted{
     _highlighted = highlighted;
     if (_highlighted){
