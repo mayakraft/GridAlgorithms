@@ -12,7 +12,7 @@
 
 // 2D array orientation column-first. indexes increment by 1 through columns, and rows are reached by steps of num_columns
 
-void AStar::setup(int c, int r, int obstacles[]){
+void AStar::setup(int c, int r, bool obstacles[]){
 
     delete obstacleCells;
     delete hValues;
@@ -31,7 +31,7 @@ void AStar::setup(int c, int r, int obstacles[]){
     parentIndex = (int*)malloc(sizeof(int)*columns*rows);
 }
 
-void AStar::setObstacleCellArray(int obstacles[]){
+void AStar::setObstacleCellArray(bool obstacles[]){
     delete obstacleCells;
     obstacleCells = (bool*)malloc(sizeof(bool)*columns*rows);
     for(int i = 0; i < columns*rows; i++)
@@ -112,12 +112,12 @@ void AStar::pathFromAtoB(int A, int B, int pathArray[], int *sizeOfArray){
         }
         // repeat with step = smallestIndex;
         if(smallestIndex == -1) {
-            printf("\nepic fail return, fix this\n");
+            printf("\nfail: cannot reach target cell\n");
             return;
         }
         step = smallestIndex;
         if(smallestIndex == B){
-            printf("\n*******\n FOUND\n*******\n");
+//            printf("\n*******\n FOUND\n*******\n");
             // trace parents back to point A, build a list along the way
             int i = 0;
             int pathIndex = B;
@@ -127,9 +127,9 @@ void AStar::pathFromAtoB(int A, int B, int pathArray[], int *sizeOfArray){
                 i++;
             } while (pathIndex != A && i < 2000);
             *sizeOfArray = i;
-            for(int j = 0; j < *sizeOfArray; j++)
-                printf("%d ",pathArray[j]);
-            printf("\n");
+//            for(int j = 0; j < *sizeOfArray; j++)
+//                printf("%d ",pathArray[j]);
+//            printf("\n");
             return;
         }
         iterations++;

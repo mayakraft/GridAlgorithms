@@ -14,8 +14,8 @@
 class AStar{
     
 public:
-    void setup(int columns, int rows, int obstacleCells[]);
-    void setObstacleCellArray(int obstacleCellArray[]);
+    void setup(int columns, int rows, bool obstacleCells[]);
+    void setObstacleCellArray(bool obstacleCellArray[]);
 
     void pathFromAtoB(int A, int B, int pathArray[], int *sizeOfArray);
 

@@ -19,7 +19,7 @@
     AStar aStar;
     SKSpriteNode *startCellSprite;
     SKSpriteNode *endCellSprite;
-    int *obstacleCellsForAStar;
+    bool *obstacleCellsForAStar;
     int *path;
     int pathSize;
 }
@@ -37,8 +37,8 @@
         // sprite kit graphics
         cells = [NSMutableArray array];
         _cellSize = self.size.width/_columns;
-        startCellSprite = [[SKSpriteNode alloc] initWithTexture:Nil color:[UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:0.5] size:CGSizeMake(_cellSize, _cellSize)];
-        endCellSprite = [[SKSpriteNode alloc] initWithTexture:Nil color:[UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.5] size:CGSizeMake(_cellSize, _cellSize)];
+        startCellSprite = [[SKSpriteNode alloc] initWithTexture:Nil color:[UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0] size:CGSizeMake(_cellSize, _cellSize)];
+        endCellSprite = [[SKSpriteNode alloc] initWithTexture:Nil color:[UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0] size:CGSizeMake(_cellSize, _cellSize)];
         [startCellSprite setHidden:YES];
         [endCellSprite setHidden:YES];
         for(int i = 0; i < _columns*_rows; i++){
@@ -56,7 +56,7 @@
     [self addChild:endCellSprite];
     cellStart = cellEnd = -1;
     
-    obstacleCellsForAStar = (int*)malloc(sizeof(bool)*_columns*_rows);
+    obstacleCellsForAStar = (bool*)malloc(sizeof(bool)*_columns*_rows);
     for(int i = 0; i < _columns*_rows; i++){
         if( [[cells objectAtIndex:i] disabled] )
             obstacleCellsForAStar[i] = true;
@@ -110,8 +110,10 @@
         for(int i = 0; i < pathSize; i++)
             [[cells objectAtIndex:path[i]] setHighlighted:NO];
         aStar.pathFromAtoB(cellStart, cellEnd, path, &pathSize);
-        for(int i = 0; i < pathSize; i++)
+        for(int i = 0; i < pathSize; i++){
+            [[cells objectAtIndex:path[i]] setHighlightedColor:[UIColor colorWithRed:0.0f green:1-i/(float)pathSize blue:i/(float)pathSize alpha:1.0]];
             [[cells objectAtIndex:path[i]] setHighlighted:YES];
+        }
     }
 //    NSDictionary *DDADictionary = [dda IndexesAndIntersectionsFromPoint:touchStart To:touch];
 //    DDAIndexes = [DDADictionary objectForKey:@"indexes"];

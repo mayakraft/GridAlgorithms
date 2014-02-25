@@ -12,6 +12,7 @@
 @interface Square : SKSpriteNode
 
 @property (nonatomic) BOOL highlighted;
+@property UIColor *highlightedColor;
 @property (nonatomic) BOOL disabled;
 
 @end

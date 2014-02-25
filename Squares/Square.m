@@ -8,6 +8,12 @@
 
 #import "Square.h"
 
+@interface Square (){
+    UIColor *normalColor;
+}
+
+@end
+
 @implementation Square
 
 -(id) initWithTexture:(SKTexture *)texture color:(UIColor *)color size:(CGSize)size{
@@ -19,6 +25,7 @@
             _disabled = false;
         if(_disabled)
             self.color = [UIColor blackColor];
+        normalColor = self.color;
     }
     return self;
 }
@@ -27,11 +34,11 @@
     _highlighted = highlighted;
     if (_highlighted){
         [self setScale:0.95];
-        [self setTexture:[SKTexture textureWithImageNamed:@"redPixel.png"]];
+        [self setColor:_highlightedColor];
     }
     else{
         [self setScale:1.0];
-        [self setTexture:nil];
+        [self setColor:normalColor];
     }
 }
 
