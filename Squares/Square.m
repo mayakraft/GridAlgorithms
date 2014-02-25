@@ -13,7 +13,7 @@
 -(id) initWithTexture:(SKTexture *)texture color:(UIColor *)color size:(CGSize)size{
     self = [super initWithTexture:texture color:color size:size];
     if(self){
-        if(arc4random()%4 == 0)
+        if(arc4random()%3 == 0)
             _disabled = true;
         else
             _disabled = false;
@@ -27,9 +27,11 @@
     _highlighted = highlighted;
     if (_highlighted){
         [self setScale:0.95];
+        [self setTexture:[SKTexture textureWithImageNamed:@"redPixel.png"]];
     }
     else{
         [self setScale:1.0];
+        [self setTexture:nil];
     }
 }
 

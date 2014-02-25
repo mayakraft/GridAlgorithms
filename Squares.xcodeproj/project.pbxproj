@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D518C5D018BC0992002B1770 /* redPixel.png in Resources */ = {isa = PBXBuildFile; fileRef = D518C5CF18BC0992002B1770 /* redPixel.png */; };
 		D5774D6F18167B8A007D4659 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5774D6E18167B8A007D4659 /* Foundation.framework */; };
 		D5774D7118167B8A007D4659 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5774D7018167B8A007D4659 /* CoreGraphics.framework */; };
 		D5774D7318167B8A007D4659 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5774D7218167B8A007D4659 /* UIKit.framework */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D518C5CF18BC0992002B1770 /* redPixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redPixel.png; sourceTree = "<group>"; };
 		D5774D6B18167B8A007D4659 /* Squares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5774D6E18167B8A007D4659 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5774D7018167B8A007D4659 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +151,7 @@
 				D5C3D58A1817B119000B1E95 /* DDA.m */,
 				D5774DA918167E3F007D4659 /* Square.h */,
 				D5774DAA18167E3F007D4659 /* Square.m */,
+				D518C5CF18BC0992002B1770 /* redPixel.png */,
 				D5774D8918167B8A007D4659 /* Images.xcassets */,
 				D5774D7518167B8A007D4659 /* Supporting Files */,
 			);
@@ -260,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D518C5D018BC0992002B1770 /* redPixel.png in Resources */,
 				D5774D8518167B8A007D4659 /* Main_iPad.storyboard in Resources */,
 				D5774D8A18167B8A007D4659 /* Images.xcassets in Resources */,
 				D5774D8218167B8A007D4659 /* Main_iPhone.storyboard in Resources */,

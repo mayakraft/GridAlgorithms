@@ -14,15 +14,27 @@
 class AStar{
     
 public:
-    void setup(int width, int height, int *obstacleCells, int sizeOfArray);
-    void setObstacleCellArray(int *obstacleCellArray, int sizeOfArray);
+    void setup(int columns, int rows, int obstacleCells[]);
+    void setObstacleCellArray(int obstacleCellArray[]);
 
-    void pathFromAtoB(int A, int B, int *pathArray, int *sizeOfArray);
+    void pathFromAtoB(int A, int B, int pathArray[], int *sizeOfArray);
 
 private:
-    int width;
-    int height;
-    int *obstacleCells;
+    int columns;
+    int rows;
+    bool *obstacleCells = NULL;
+    int obstacleCellArrayLength;
+
+    int *hValues = NULL;  // (heuristic) manhattan distance to end point
+    int *gValues = NULL;  // move cost from start point
+    int *fValues = NULL;  // g + h values
+    
+    bool *openList = NULL;
+    bool *closedList = NULL;
+    
+    int *parentIndex = NULL;
+    
+    void convertIndexToColumnRow(int index, int *column, int *row);
 
 };
 

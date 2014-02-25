@@ -20,6 +20,8 @@
     SKSpriteNode *startCellSprite;
     SKSpriteNode *endCellSprite;
     int *obstacleCellsForAStar;
+    int *path;
+    int pathSize;
 }
 @end
 
@@ -54,17 +56,16 @@
     [self addChild:endCellSprite];
     cellStart = cellEnd = -1;
     
-    NSMutableArray *disabledCells = [NSMutableArray array];
+    obstacleCellsForAStar = (int*)malloc(sizeof(bool)*_columns*_rows);
     for(int i = 0; i < _columns*_rows; i++){
-        if([[cells objectAtIndex:i] disabled]){
-            [disabledCells addObject:[NSNumber numberWithInt:i]];
-        }
+        if( [[cells objectAtIndex:i] disabled] )
+            obstacleCellsForAStar[i] = true;
+        else
+            obstacleCellsForAStar[i] = false;
     }
-    obstacleCellsForAStar = (int*)malloc(sizeof(int)*[disabledCells count]);
-    for(int i = 0; i < disabledCells.count; i++){
-        obstacleCellsForAStar[i] = [[disabledCells objectAtIndex:i] intValue];
-    }
-    aStar.setup(_columns, _rows, obstacleCellsForAStar, (int)[disabledCells count]);
+    path = (int*)malloc(sizeof(int)*_columns*_rows);
+    pathSize = 0;
+    aStar.setup(_columns, _rows, obstacleCellsForAStar);
         
     return self;
 }
@@ -95,9 +96,6 @@
     touchStart = [[touches anyObject] locationInNode:self];
     cellStart = [self indexForTouch:touchStart];
     [self updateStartCell];
-    CGPoint index = [self indexPointForTouch:touchStart];
-    NSLog(@"(%d, %d), %d", (int)index.x, (int)index.y, cellStart);
-    
     [self touchesMoved:touches withEvent:event];
 }
 
@@ -109,6 +107,11 @@
         [self updateEndCell];
         CGPoint touchCellEnd = [self indexPointForIndex:cellEnd];
         NSLog(@"(%d, %d)",(int)touchCellEnd.x, (int)touchCellEnd.y);
+        for(int i = 0; i < pathSize; i++)
+            [[cells objectAtIndex:path[i]] setHighlighted:NO];
+        aStar.pathFromAtoB(cellStart, cellEnd, path, &pathSize);
+        for(int i = 0; i < pathSize; i++)
+            [[cells objectAtIndex:path[i]] setHighlighted:YES];
     }
 //    NSDictionary *DDADictionary = [dda IndexesAndIntersectionsFromPoint:touchStart To:touch];
 //    DDAIndexes = [DDADictionary objectForKey:@"indexes"];
